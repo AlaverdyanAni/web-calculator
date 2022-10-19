@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CalculatorServiceTest {
 
     private final CalculatorService out = new CalculatorServiceImpl();
-
     @Test
     void shouldReturnSum() {
         String result1 = out.plus(NUM1, NUM2);
@@ -18,9 +17,6 @@ public class CalculatorServiceTest {
         String result2 = out.plus(NUM3, NUM4);
         assertEquals(ResultSUM2, result2);
     }
-
-
-
     @Test
     void shouldReturnDifference() {
         String result1 = out.minus(NUM1, NUM2);
@@ -28,7 +24,6 @@ public class CalculatorServiceTest {
         assertEquals(ResultDIFFERENCE1, result1);
         assertEquals(ResultDIFFERENCE2, result2);
     }
-
 
     @Test
     void shouldReturnMultiply() {
@@ -45,7 +40,6 @@ public class CalculatorServiceTest {
         assertEquals(ResultDIVIDE1,result1);
         assertEquals(ResultDIVIDE2,result2);
     }
-
     @Test
     void throwExceptionDivisionByZero() {
         assertThrows(IllegalArgumentException.class, () -> out.divide(NUM1, NUM7));
