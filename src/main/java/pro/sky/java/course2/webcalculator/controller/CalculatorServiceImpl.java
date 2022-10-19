@@ -4,26 +4,47 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
+    private String hello="Добро пожаловать в калькулятор";
+    private String Error_missing_parameters="Введите цифры!";
+    private String Error_division_by_zero="На 0 делить нельзя!";
+
     @Override
 
     public String hellocalculator(){
-        return "Добро пожаловать в калькулятор";
+        return hello;
     }
     @Override
-    public int plus(Integer num1,Integer num2){
-        return num1+num2;
+    public String plus(Integer num1,Integer num2){
+
+        if (num1==0 || num2==0){
+            return Error_missing_parameters;
+        }
+        double result=num1+num2;
+        return num1+"+"+num2+"="+result;
     }
     @Override
-    public int minus(Integer num1,Integer num2){
-        return num1-num2;
+    public String minus(Integer num1,Integer num2){
+        if (num1==0 || num2==0) {
+            return Error_missing_parameters;
+        }
+        double result=num1-num2;
+        return num1+"-"+num2+"="+result;
     }
     @Override
-    public int multiply(Integer num1,Integer num2){
-      return num1*num2;
+    public String multiply(Integer num1,Integer num2){
+        if (num1==0 || num2==0) {
+            return Error_missing_parameters;
+        }
+        double result=num1*num2;
+      return num1+"x"+num2+"="+result;
 
     }
     @Override
-    public double divide(Integer num1,Integer num2){
-        return num1/num2;
+    public String divide(Integer num1,Integer num2){
+        if (num1==0 || num2==0) {
+            return Error_missing_parameters;
+        }
+        double result=num1/num2;
+        return num1+":"+num2+"="+result;
     }
 }
