@@ -1,4 +1,4 @@
-package pro.sky.java.course2.webcalculator.controller;
+package pro.sky.java.course2.webcalculator.service;
 
 import org.springframework.stereotype.Service;
 
@@ -14,7 +14,7 @@ public class CalculatorServiceImpl implements CalculatorService {
         return hello;
     }
     @Override
-    public String plus(Integer num1,Integer num2){
+    public String plus(double num1,double num2){
 
         if (num1==0 || num2==0){
             return Error_missing_parameters;
@@ -23,7 +23,7 @@ public class CalculatorServiceImpl implements CalculatorService {
         return num1+"+"+num2+"="+result;
     }
     @Override
-    public String minus(Integer num1,Integer num2){
+    public String minus(double num1,double num2){
         if (num1==0 || num2==0) {
             return Error_missing_parameters;
         }
@@ -31,7 +31,7 @@ public class CalculatorServiceImpl implements CalculatorService {
         return num1+"-"+num2+"="+result;
     }
     @Override
-    public String multiply(Integer num1,Integer num2){
+    public String multiply(double num1,double num2){
         if (num1==0 || num2==0) {
             return Error_missing_parameters;
         }
@@ -40,7 +40,7 @@ public class CalculatorServiceImpl implements CalculatorService {
 
     }
     @Override
-    public String divide(Integer num1,Integer num2){
+    public String divide(double num1,double num2){
         if (num1==0 || num2==0) {
             return Error_missing_parameters;
         }
