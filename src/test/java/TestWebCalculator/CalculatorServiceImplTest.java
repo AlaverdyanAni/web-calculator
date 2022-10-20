@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static ConstantsWebCalculator.CalculatorTestConstants.*;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CalculatorServiceTest {
+public class CalculatorServiceImplTest {
 
     private final CalculatorService out = new CalculatorServiceImpl();
     @Test
