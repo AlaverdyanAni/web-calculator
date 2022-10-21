@@ -29,8 +29,8 @@ public class CalculatorServiceImplParamTest {
     }
     public static Stream<Arguments> provideParamsForDivideTests() {
         return Stream.of(
-                Arguments.of(NUM5,NUM1,ResultDIVIDE1),
-                Arguments.of(NUM6,NUM3,ResultDIVIDE2));
+                Arguments.of(NUM5, NUM1, ResultDIVIDE1),
+                Arguments.of(NUM6, NUM3, ResultDIVIDE2));
     }
     private final CalculatorService out= new CalculatorServiceImpl();
 

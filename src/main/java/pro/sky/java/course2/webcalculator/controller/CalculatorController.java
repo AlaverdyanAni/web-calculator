@@ -21,24 +21,42 @@ public class CalculatorController {
     @GetMapping(path = "/calculator/plus")
     public String plus(@RequestParam(name = "num1", required = false) Integer num1,
                        @RequestParam(name = "num2", required = false) Integer num2) {
-        return calculatorService.plus(num1, num2);
+        if (num1==null || num2==null){
+            return "Введите цифры!";
+        }
+        String  result=calculatorService.plus(num1,num2);
+        return num1+"+"+num2+"="+result;
     }
 
     @GetMapping(path = "/calculator/minus")
     public String minus(@RequestParam(name = "num1", required=false) Integer num1,
                        @RequestParam(name = "num2", required = false) Integer num2) {
-        return calculatorService.minus(num1, num2);
+        if (num1==null || num2==null){
+            return "Введите цифры!";
+        }
+        String result=calculatorService.minus(num1, num2);
+        return num1+"-"+num2+"="+result;
     }
     @GetMapping(path = "/calculator/multiply")
     public String multiply(@RequestParam(name = "num1", required = false) Integer num1,
                         @RequestParam(name = "num2", required = false) Integer num2) {
-        return calculatorService.multiply(num1, num2);
+        if (num1==null || num2==null){
+            return "Введите цифры!";
+        }
+        String result=calculatorService.multiply(num1, num2);
+        return num1+"*"+num2+"="+result;
     }
     @GetMapping(path = "/calculator/divide")
     public String divide(@RequestParam(name = "num1", required = false) Integer num1,
                            @RequestParam(name = "num2", required = false) Integer num2) {
+        if (num1==null || num2==null){
+            return "Введите цифры!";
+        }
+        if (num2==0)
+            throw new IllegalArgumentException("На 0 делить нельзя!");
+        String result=calculatorService.divide(num1, num2);
+        return num1+":"+num2+"="+result;
 
-        return calculatorService.divide(num1, num2);
     }
 }
 

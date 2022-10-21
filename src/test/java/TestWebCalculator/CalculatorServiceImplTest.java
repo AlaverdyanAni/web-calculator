@@ -36,7 +36,6 @@ public class CalculatorServiceImplTest {
     void shouldDivide(){
         String result1=out.divide(NUM5,NUM1);
         String result2=out.divide(NUM6,NUM3);
-        String result3=out.divide(NUM1,NUM7);
         assertEquals(ResultDIVIDE1,result1);
         assertEquals(ResultDIVIDE2,result2);
     }
