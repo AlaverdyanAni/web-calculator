@@ -36,26 +36,26 @@ public class CalculatorServiceImplParamTest {
 
     @ParameterizedTest
     @MethodSource("provideParamsForSumTests")
-    public void shouldReturnSum(double num1,double num2, String expectedSum){
-        String result = out.plus(num1,num2);
+    public void shouldReturnSum(double num1,double num2, double expectedSum){
+        double result = out.plus(num1,num2);
         assertEquals(expectedSum,result);
     }
     @ParameterizedTest
     @MethodSource("provideParamsForDifferenceTests")
-    public void shouldReturnDifference(double num1,double num2, String expectedDifference){
-        String result = out.minus(num1,num2);
+    public void shouldReturnDifference(double num1,double num2, double expectedDifference){
+        double result = out.minus(num1,num2);
         assertEquals(expectedDifference,result);
     }
     @ParameterizedTest
     @MethodSource("provideParamsForMultiplyTests")
-    public void shouldReturnMultiply(double num1,double num2, String expectedMultiply){
-        String result = out.multiply(num1,num2);
+    public void shouldReturnMultiply(double num1,double num2, double expectedMultiply){
+        double result = out.multiply(num1,num2);
         assertEquals(expectedMultiply,result);
     }
     @ParameterizedTest
     @MethodSource("provideParamsForDivideTests")
-    public void shouldReturnDivide(double num1,double num2, String expectedDivide) {
-        String result = out.divide(num1, num2);
+    public void shouldReturnDivide(double num1,double num2, double expectedDivide) {
+        double result = out.divide(num1, num2);
         assertEquals(expectedDivide, result);
     }
 }

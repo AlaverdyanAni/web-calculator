@@ -24,7 +24,7 @@ public class CalculatorController {
         if (num1==null || num2==null){
             return "Введите цифры!";
         }
-        String  result=calculatorService.plus(num1,num2);
+        double result=calculatorService.plus(num1,num2);
         return num1+"+"+num2+"="+result;
     }
 
@@ -34,7 +34,7 @@ public class CalculatorController {
         if (num1==null || num2==null){
             return "Введите цифры!";
         }
-        String result=calculatorService.minus(num1, num2);
+        double result=calculatorService.minus(num1, num2);
         return num1+"-"+num2+"="+result;
     }
     @GetMapping(path = "/calculator/multiply")
@@ -43,7 +43,7 @@ public class CalculatorController {
         if (num1==null || num2==null){
             return "Введите цифры!";
         }
-        String result=calculatorService.multiply(num1, num2);
+        double result=calculatorService.multiply(num1, num2);
         return num1+"*"+num2+"="+result;
     }
     @GetMapping(path = "/calculator/divide")
@@ -54,7 +54,7 @@ public class CalculatorController {
         }
         if (num2==0)
             throw new IllegalArgumentException("На 0 делить нельзя!");
-        String result=calculatorService.divide(num1, num2);
+        double result=calculatorService.divide(num1, num2);
         return num1+":"+num2+"="+result;
 
     }
