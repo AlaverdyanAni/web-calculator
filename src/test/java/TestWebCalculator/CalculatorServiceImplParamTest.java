@@ -8,6 +8,7 @@ import pro.sky.java.course2.webcalculator.service.CalculatorServiceImpl;
 
 import static ConstantsWebCalculator.CalculatorTestConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.stream.Stream;
 
@@ -62,8 +63,12 @@ public class CalculatorServiceImplParamTest {
     @ParameterizedTest
     @MethodSource("provideParamsForDivideTests")
     public void shouldReturnDivide(double num1, double num2, double expectedDivide) {
-        double result = out.divide(num1, num2);
-        assertEquals(expectedDivide, result);
+        if (num2 == 0) {
+            assertThrows(IllegalArgumentException.class, () -> out.divide(NUM1, NUM7));
+        } else {
+            double result = out.divide(num1, num2);
+            assertEquals(expectedDivide, result);
+        }
     }
 }
 
