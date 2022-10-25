@@ -1,0 +1,47 @@
+package TestWebCalculator;
+
+import org.junit.jupiter.api.Test;
+import pro.sky.java.course2.webcalculator.service.CalculatorService;
+import pro.sky.java.course2.webcalculator.service.CalculatorServiceImpl;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static ConstantsWebCalculator.CalculatorTestConstants.*;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+public class CalculatorServiceImplTest {
+
+    private final CalculatorService out = new CalculatorServiceImpl();
+    @Test
+    void shouldReturnSum() {
+        double result1 = out.plus(NUM1, NUM2);
+        assertEquals(ResultSUM1, result1);
+        double result2 = out.plus(NUM3, NUM4);
+        assertEquals(ResultSUM2, result2);
+    }
+    @Test
+    void shouldReturnDifference() {
+        double result1 = out.minus(NUM1, NUM2);
+        assertEquals(ResultDIFFERENCE1, result1);
+        double result2 = out.minus(NUM3, NUM4);
+        assertEquals(ResultDIFFERENCE2, result2);
+    }
+
+    @Test
+    void shouldReturnMultiply() {
+        double result1 = out.multiply(NUM1, NUM2);
+        assertEquals(ResultMULTIPLY1, result1);
+        double result2 = out.multiply(NUM3, NUM4);
+        assertEquals(ResultMULTIPLY2, result2);
+    }
+    @Test
+    void shouldReturnDivide(){
+        double result1=out.divide(NUM5,NUM1);
+        assertEquals(ResultDIVIDE1,result1);
+        double result2=out.divide(NUM6,NUM3);
+        assertEquals(ResultDIVIDE2,result2);
+    }
+    @Test
+    void throwExceptionDivisionByZero() {
+        assertThrows(IllegalArgumentException.class, () -> out.divide(NUM1, NUM7));
+    }
+}
+    

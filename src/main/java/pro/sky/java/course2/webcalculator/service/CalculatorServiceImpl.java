@@ -1,4 +1,4 @@
-package pro.sky.java.course2.webcalculator.controller;
+package pro.sky.java.course2.webcalculator.service;
 
 import org.springframework.stereotype.Service;
 
@@ -10,20 +10,23 @@ public class CalculatorServiceImpl implements CalculatorService {
         return "Добро пожаловать в калькулятор";
     }
     @Override
-    public int plus(Integer num1,Integer num2){
+    public double plus(double num1,double num2){
         return num1+num2;
     }
     @Override
-    public int minus(Integer num1,Integer num2){
+    public double minus(double num1,double num2){
         return num1-num2;
     }
     @Override
-    public int multiply(Integer num1,Integer num2){
-      return num1*num2;
+    public double multiply(double num1,double num2){
+        return num1*num2;
 
     }
     @Override
-    public double divide(Integer num1,Integer num2){
+    public double divide(double num1,double num2){
+        if(num2==0){
+            throw new IllegalArgumentException("На 0 делить нельзя!");
+        }
         return num1/num2;
     }
 }
